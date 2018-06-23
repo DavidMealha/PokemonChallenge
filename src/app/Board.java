@@ -5,14 +5,12 @@ import java.util.HashMap;
 public class Board {
 
     private HashMap<String, Boolean> collisions;
-    private int counter;
     private Position currentPosition;
 
     public Board() {
-        counter         = 0;
         collisions      = new HashMap<String, Boolean>();
         currentPosition = new Position(0, 0);
-        incrementPosition();
+        addCollision();
     }
 
     public void move(char movement) {
@@ -30,24 +28,18 @@ public class Board {
     }
 
     private void verifyPosition() {
-        collisions.put(currentPosition.getKey(), true);
-        //Boolean value = collisions.get(currentPosition.getKey());
+        Boolean value = collisions.get(currentPosition.getKey());
 
-        // if (value == null) {
-        //    incrementPosition();
-        //}
+        if (value == null) {
+            addCollision();
+        }
     }
 
-    private void incrementPosition() {
+    private void addCollision() {
         collisions.put(currentPosition.getKey(), true);
-        counter++;
     }
 
-    public int mergeCollisions() {
+    public int getCollisionsSize() {
         return collisions.size();
-    }
-
-    public int getCounter() {
-        return counter;
     }
 }
