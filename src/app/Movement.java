@@ -1,6 +1,6 @@
 package app;
 
-public class MOVEMENT_SYMBOL {
+public class Movement {
 
     public static char NORTH = 'N';
 

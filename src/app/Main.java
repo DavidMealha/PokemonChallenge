@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         String movements = "";
+        long startTime = System.currentTimeMillis();
 
         try {
             movements = args[0];
@@ -12,7 +13,13 @@ public class Main {
             System.exit(0);
         }
 
-        new PokemonApplication()
-                .Start(movements);
+        if (InputValidator.validateMovements(movements)) {
+            new PokemonApplication()
+                    .Start(movements);
+        }
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        System.out.println("Elapsed time => " + elapsedTime + " ms.");
     }
 }

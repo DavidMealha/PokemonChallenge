@@ -3,7 +3,7 @@ package app;
 public class InputValidator {
 
     /**
-     *
+     * Responsible to verify is all the movements are valid
      * @param input
      * @return
      */
@@ -13,18 +13,17 @@ public class InputValidator {
                 return false;
             }
         }
-
         return true;
     }
 
     /**
-     *
+     * Checks if a char represents a valid movement.
      * @param movement
      * @return
      */
     private static boolean isMovementValid(char movement) {
-        if (movement == MOVEMENT_SYMBOL.NORTH || movement == MOVEMENT_SYMBOL.EAST ||
-                movement == MOVEMENT_SYMBOL.SOUTH || movement == MOVEMENT_SYMBOL.WEST) {
+        if (movement == Movement.NORTH || movement == Movement.EAST ||
+                movement == Movement.SOUTH || movement == Movement.WEST) {
             return true;
         }
         return false;
