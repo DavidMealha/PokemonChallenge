@@ -13,6 +13,10 @@ public class Board {
         addCollision();
     }
 
+    /**
+     * Performs a movements accordingly to a movement received as parameter.
+     * @param movement
+     */
     public void move(char movement) {
         if (movement == Movement.NORTH) {
             currentPosition.moveNorth();
@@ -20,13 +24,16 @@ public class Board {
             currentPosition.moveSouth();
         } else if (movement == Movement.EAST) {
             currentPosition.moveEast();
-        } else if (movement == Movement.SOUTH) {
+        } else if (movement == Movement.WEST) {
             currentPosition.moveWest();
         }
 
         verifyPosition();
     }
 
+    /**
+     * Verifies if that position was already visited, otherwise its key is added to the collisions HashSet.
+     */
     private void verifyPosition() {
         boolean hasKey = collisions.contains(currentPosition.getKey());
 

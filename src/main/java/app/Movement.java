@@ -2,12 +2,12 @@ package app;
 
 public class Movement {
 
-    public static char NORTH = 'N';
+    public static final char NORTH = 'N';
 
-    public static char SOUTH = 'S';
+    public static final char SOUTH = 'S';
 
-    public static char EAST = 'E';
+    public static final char EAST = 'E';
 
-    public static char WEST = 'O';
+    public static final char WEST = 'O';
 
 }
