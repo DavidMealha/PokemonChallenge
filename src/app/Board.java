@@ -1,14 +1,14 @@
 package app;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class Board {
 
-    private HashMap<String, Boolean> collisions;
+    private HashSet<String> collisions;
     private Position currentPosition;
 
     public Board() {
-        collisions      = new HashMap<String, Boolean>();
+        collisions      = new HashSet<String>();
         currentPosition = new Position(0, 0);
         addCollision();
     }
@@ -28,15 +28,15 @@ public class Board {
     }
 
     private void verifyPosition() {
-        Boolean value = collisions.get(currentPosition.getKey());
+        boolean hasKey = collisions.contains(currentPosition.getKey());
 
-        if (value == null) {
+        if (!hasKey) {
             addCollision();
         }
     }
 
     private void addCollision() {
-        collisions.put(currentPosition.getKey(), true);
+        collisions.add(currentPosition.getKey());
     }
 
     public int getCollisionsSize() {

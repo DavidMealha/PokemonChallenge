@@ -3,13 +3,13 @@ package app;
 public class InputValidator {
 
     /**
-     * Responsible to verify is all the movements are valid
+     * Responsible to verify if all the movements are valid
      * @param input
      * @return
      */
     public static boolean validateMovements(String input) {
         for (char c : input.toCharArray()) {
-            if (!isMovementValid(c)) {
+            if (isMovementInvalid(c)) {
                 return false;
             }
         }
@@ -21,12 +21,12 @@ public class InputValidator {
      * @param movement
      * @return
      */
-    private static boolean isMovementValid(char movement) {
+    private static boolean isMovementInvalid(char movement) {
         if (movement == Movement.NORTH || movement == Movement.EAST ||
                 movement == Movement.SOUTH || movement == Movement.WEST) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 }
 
