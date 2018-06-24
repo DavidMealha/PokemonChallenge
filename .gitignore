@@ -1,3 +1,5 @@
-#.idea
-#out
-#PokemonChallenge.iml
+.idea
+out
+PokemonChallenge.iml
+target
+bin
