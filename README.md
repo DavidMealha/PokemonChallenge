@@ -9,7 +9,7 @@ Challenge for Premium Minds Internship
 Run the following command in the root directory of the project.
 
 ```java
-javac -d bin src/app/*
+/> javac -d bin src/main/java/app/*
 ```
 
 ### Run application
@@ -17,5 +17,5 @@ javac -d bin src/app/*
 Run the following command in the bin directory of the project.
 
 ```java
-java app.Main NS
+/bin> java app.Main NS
 ```
