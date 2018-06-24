@@ -1,18 +1,16 @@
 package app;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class Board {
 
-    private HashMap<String, Boolean> collisions;
-    private int counter;
+    private HashSet<String> collisions;
     private Position currentPosition;
 
     public Board() {
-        counter         = 0;
-        collisions      = new HashMap<String, Boolean>();
+        collisions      = new HashSet<String>();
         currentPosition = new Position(0, 0);
-        incrementPosition();
+        addCollision();
     }
 
     public void move(char movement) {
@@ -30,24 +28,18 @@ public class Board {
     }
 
     private void verifyPosition() {
-        collisions.put(currentPosition.getKey(), true);
-        //Boolean value = collisions.get(currentPosition.getKey());
+        boolean hasKey = collisions.contains(currentPosition.getKey());
 
-        // if (value == null) {
-        //    incrementPosition();
-        //}
+        if (!hasKey) {
+            addCollision();
+        }
     }
 
-    private void incrementPosition() {
-        collisions.put(currentPosition.getKey(), true);
-        counter++;
+    private void addCollision() {
+        collisions.add(currentPosition.getKey());
     }
 
-    public int mergeCollisions() {
+    public int getCollisionsSize() {
         return collisions.size();
-    }
-
-    public int getCounter() {
-        return counter;
     }
 }

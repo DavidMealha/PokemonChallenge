@@ -9,7 +9,6 @@ public class PokemonApplication {
             b.move(c);
         }
 
-        // System.out.println("Total amount of Pokemons => " + b.getCounter());
-        System.out.println("Total amount of Pokemons => " + b.mergeCollisions());
+        System.out.println("Total amount of Pokemons => " + b.getCollisionsSize());
     }
 }
