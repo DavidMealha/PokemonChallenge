@@ -27,3 +27,5 @@ A Position is represented as a (x, y) axis of int values, which represent a limi
 ## Considerations
 
 The Movements representation could be an Enum type. It would ease the verification of a valid Movement (through the use of a for-loop to check the occurrence of a movement inside the Enum). However the change of the list of Movements is unlikely to happen and really short.
+
+Used a HashSet to store the visited positions, since its lookup complexity is O(1), while something like an ArrayList has a O(n) complexity
