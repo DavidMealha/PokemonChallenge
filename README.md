@@ -14,6 +14,12 @@ Run the following command in the root directory of the project.
 
 ### Run application
 
+Create the bin directory
+
+```shell
+/> mkdir bin
+```
+
 Run the following command in the bin directory of the project.
 
 ```java
