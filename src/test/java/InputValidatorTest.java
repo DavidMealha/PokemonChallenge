@@ -18,4 +18,11 @@ public class InputValidatorTest {
 
         assertEquals(false, result);
     }
+
+    @Test
+    public void testLowerCaseMovements() {
+        boolean result = InputValidator.validateMovements("nsns");
+
+        assertEquals(true, result);
+    }
 }

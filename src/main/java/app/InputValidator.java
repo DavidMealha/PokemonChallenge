@@ -16,6 +16,10 @@ public class InputValidator {
         return true;
     }
 
+    public static String toUpperCase(String movements) {
+        return movements.toUpperCase();
+    }
+
     /**
      * Checks if a char represents a valid movement.
      * @param movement

@@ -8,6 +8,7 @@ public class Main {
 
         try {
             movements = args[0];
+            movements = InputValidator.toUpperCase(movements);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.err.println("Missing argument!");
             System.exit(0);
@@ -16,6 +17,9 @@ public class Main {
         if (InputValidator.validateMovements(movements)) {
             new PokemonApplication()
                     .Start(movements);
+        } else {
+            System.err.println("Wrong argument!");
+            System.exit(0);
         }
 
         long stopTime = System.currentTimeMillis();

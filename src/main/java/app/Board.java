@@ -32,7 +32,7 @@ public class Board {
     }
 
     /**
-     * Verifies if that position was already visited, otherwise its key is added to the collisions HashSet.
+     * Verifies if the current position was already visited, otherwise its key is added to the collisions HashSet.
      */
     private void verifyPosition() {
         boolean hasKey = collisions.contains(currentPosition.getKey());
